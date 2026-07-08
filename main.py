@@ -7,14 +7,14 @@ from admin import admin_panel
 st.title("🎟️ Movie Ticket Booking System")
 
 st.set_page_config(
-    page_title="Movie Ticket",    
-    page_icon="🎬",             
-    layout="wide",             
-    initial_sidebar_state="expanded"  
+    page_title="Movie Ticket",
+    page_icon="🎬",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-st.markdown(""" 
-<style>  
+st.markdown("""
+<style>
 .stApp {
     background-color: #1C0C2B;
     color: #F0F0F0;
@@ -27,7 +27,7 @@ st.markdown("""
     background-color: #B20710;
     color: white;
 }
-            
+
 .stTextInput input {
     border: 1px solid #444 !important;
 }
@@ -43,8 +43,8 @@ st.markdown("""
 .stTextArea input:focus {
     border: 2px solid white !important;
     box-shadow: none !important;
-}         
-            
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -61,8 +61,8 @@ if menu == "User":
     # Get full data for selected movie
     selected_movie = next(m for m in movies if m[0] == movie_id)
     _, title, genre, duration, info, cast = selected_movie
-   
-    
+
+
 
     # Display movie details after selection
     st.markdown("### 🎬 Movie Details")
@@ -71,7 +71,7 @@ if menu == "User":
     st.write(f"**Description:** {info}")
     st.write(f"**Cast:** {cast}")
 
-   
+
     showtimes = get_showtimes(movie_id)
 
     if showtimes:
@@ -187,7 +187,7 @@ if menu == "User":
                     st.error("Some seats were already booked!")
 
 
-    
+
 
 else:
     admin_panel()
